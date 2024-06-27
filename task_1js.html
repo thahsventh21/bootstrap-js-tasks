@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 1</title>
+  <script>
+    function reverseNum(num) {
+      var reversedNum = parseInt(num.toString().split('').reverse().join(''));
+      return reversedNum;
+    }
+    function reverseDisplay(){
+      var input = document.getElementById('inputNum').value;
+      var ans = reverseNum(input);
+      document.getElementById('ans').innerHTML = 'Reversed Number: ' + ans;
+    }
+  </script>
+</head>
+<body>
+  <h1>Reverse Number</h1>
+  <input type="number" id="inputNum">
+  <button onclick="reverseDisplay()">Reverse</button>
+  <p id="ans"></p>
+</body>
+</html>
