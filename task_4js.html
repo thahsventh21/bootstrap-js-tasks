@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 4</title>
+  <script>
+    function date(){
+      var currentDate = new Date();
+      var date = currentDate.toDateString();
+      document.getElementById('date').innerHTML = 'Date: ' + date;
+    }
+    function time(){
+      var currentTime = new Date();
+      var time = currentTime.toLocaleTimeString();
+      document.getElementById('time').innerHTML = 'Time: ' + time;
+    }
+  </script>
+</head>
+<body>
+  <h1>Date and Time Display</h1>
+  <button type="button" onclick="date()">Show Date</button>
+  <p id="date"></p>
+  <button type="button" onclick="time()">Show Time</button>
+  <p id="time"></p>
+  
+  
+</body>
+</html>
