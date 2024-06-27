@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task 7</title>
+<style>
+  button {
+    width: 100px;
+    padding: 10px;
+  }
+  .container {
+    margin-top: 100px ;
+    position: fixed;
+  }
+  #animation {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    transition: left 2s linear;
+  }
+
+  img {
+    width:200px;
+    height: 200px;
+  }
+</style>
+<script>
+    var duration;
+    function start() {
+      var div = document.getElementById('animation');
+      var left = 0;
+  
+      duration = setInterval(function() {
+        left += 5;
+        div.style.left = left+'px';
+  
+        if (left > window.innerWidth) {
+          left=-100;
+        }
+      }, 100);
+    }
+  
+    function stop() {
+      clearInterval(duration);
+    }
+  </script>
+</head>
+<body>
+
+<img src="./train.png" id="animation" alt="train">
+
+<div class="container">
+    <h2>Click the following buttons to handle animation</h2>
+  <button onclick="start()">Start</button>
+  <button onclick="stop()">Stop</button>
+</div>
+
+</body>
+</html>
