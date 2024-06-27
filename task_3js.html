@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task 3</title>
+  <script>
+    function multiply(){
+      var num1=parseFloat(document.getElementById('num1').value);
+      var num2=parseFloat(document.getElementById('num2').value);
+      
+      var multiplication = num1*num2; 
+      document.getElementById('ans').innerHTML = 'The Result is: ' + multiplication;
+    }
+    function divide() {
+      var num1=parseFloat(document.getElementById('num1').value);
+      var num2=parseFloat(document.getElementById('num2').value);
+      
+      var division = num1/num2;
+      document.getElementById('ans').innerHTML = 'The Result is: ' + division;
+    }
+  </script>
+</head>
+<body>
+  <h1>Multiplication and Division Calculator</h1>
+    <p>
+        <label for="num1">1<sup>st</sup> Number</label>
+        <input type="number" id="num1" required>
+    </p>
+    <p>
+        <label for="num2">2<sup>nd</sup> Number</label>
+        <input type="number" id="num2" required>
+    </p>
+    <button type="button" onclick="multiply()">Multiply</button>
+    <button type="button" onclick="divide()">Divide</button>
+  <p id="ans"></p>
+</body>
+</html>
