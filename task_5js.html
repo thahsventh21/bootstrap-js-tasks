@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 5</title>
+</head>
+<style type="text/css">
+  input, select {
+    margin-left: 50px;
+    margin-bottom: 10px;
+  }
+
+  #website {
+    margin-left: 38px;
+  }
+
+  #message {
+    margin: -15px 0 0 100px;
+  }
+
+  button {
+    margin-left: 100px;
+  }
+
+</style>
+<body>
+  <form>
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name"><br/>
+    <span id="nameError" style="color: red;"></span><br/>
+
+    <label for="email">Email:</label>
+    <input type="email" name="email" id="email"><br/>
+    <span id="emailError" style="color: red;"></span><br/>
+
+    <label for="website">Website:</label>
+    <input type="url" name="website" id="website"><br/>
+    <span id="websiteError" style="color: red;"></span><br/>
+
+    <label for="message">Message:</label><br>
+    <textarea name="message" id="message" rows="5" cols="18"></textarea><br/>
+    <span id="messageError" style="color: red;"></span><br/>
+
+    <p><button type="button" onclick="validateForm()">Submit</button></p>
+  </form>
+
+  <script>
+    function validateForm() {
+      var nameInput = document.getElementById('name');
+      var emailInput = document.getElementById('email');
+      var websiteInput = document.getElementById('website');
+      var messageTextarea = document.getElementById('message');
+
+      var nameError = document.getElementById('nameError');
+      var emailError = document.getElementById('emailError');
+      var websiteError = document.getElementById('websiteError');
+      var messageError = document.getElementById('messageError');
+
+      nameError.innerHTML = '';
+      emailError.innerHTML = '';
+      websiteError.innerHTML = '';
+      messageError.innerHTML = '';
+
+      if (nameInput.value === '') {
+        nameError.innerHTML = 'Field is required';
+      }
+
+      if (emailInput.value === '') {
+        emailError.innerHTML = 'Field is required';
+      } else if (!isValidEmail(emailInput.value)) {
+        emailError.innerHTML = 'A valid email is required';
+      }
+
+      if (websiteInput.value === '') {
+        websiteError.innerHTML = 'Field is required';
+      } else if (!isValidUrl(websiteInput.value)) {
+        websiteError.innerHTML = 'A valid URL is required';
+      }
+
+      if (messageTextarea.value === '') {
+        messageError.innerHTML = 'Field is required';
+      }
+    }
+
+    function isValidEmail(email) {
+      var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+  </script>
+</body>
+</html>
